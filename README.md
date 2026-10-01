@@ -37,3 +37,7 @@ albo bez zmian w kodzie: `ANTHROPIC_BASE_URL=http://127.0.0.1:8080` i `ANTHROPIC
 ## Ochrona przed wyciekiem kluczy
 
 `.env` jest w `.gitignore`, a hook pre-commit (`scripts/hooks`) blokuje commit z sekretami lub plikiem `.env`. Po sklonowaniu repo wlacz go: `git config core.hooksPath scripts/hooks`.
+
+### Klucz Anthropic
+
+Prawdziwy `ANTHROPIC_API_KEY` najlepiej trzymac poza repo, jako zmienna uzytkownika: `setx ANTHROPIC_API_KEY "sk-ant-..."` (nowy terminal). Zmienna srodowiskowa ma pierwszenstwo nad `.env`, a klucz nigdy nie trafia do logow ani odpowiedzi gateway.
