@@ -9,15 +9,15 @@ python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 copy .env.example .env     # uzupelnij ANTHROPIC_API_KEY i GATEWAY_KEYS
-python run.py              # http://127.0.0.1:8080
+python run.py              # http://127.0.0.1:8088
 ```
 
 ## Uzycie w istniejacym projekcie
 
 ```python
-client = anthropic.Anthropic(base_url="http://127.0.0.1:8080", api_key="<klucz-gateway>")
+client = anthropic.Anthropic(base_url="http://127.0.0.1:8088", api_key="<klucz-gateway>")
 ```
-albo bez zmian w kodzie: `ANTHROPIC_BASE_URL=http://127.0.0.1:8080` i `ANTHROPIC_API_KEY=<klucz-gateway>`.
+albo bez zmian w kodzie: `ANTHROPIC_BASE_URL=http://127.0.0.1:8088` i `ANTHROPIC_API_KEY=<klucz-gateway>`.
 
 ## Co robi
 
