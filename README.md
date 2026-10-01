@@ -5,6 +5,8 @@ Lekkie proxy (FastAPI + httpx) między programistami a API Anthropic: autoryzacj
 ## Start
 
 ```
+python -m venv .venv
+.venvScriptsctivate
 pip install -r requirements.txt
 copy .env.example .env     # uzupelnij ANTHROPIC_API_KEY i GATEWAY_KEYS
 python run.py              # http://127.0.0.1:8080
