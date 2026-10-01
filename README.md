@@ -13,9 +13,9 @@ python run.py              # http://127.0.0.1:8080
 ## Uzycie w istniejacym projekcie
 
 ```python
-client = anthropic.Anthropic(base_url="http://127.0.0.1:8080", api_key="dev-alice-123")
+client = anthropic.Anthropic(base_url="http://127.0.0.1:8080", api_key="<klucz-gateway>")
 ```
-albo bez zmian w kodzie: `ANTHROPIC_BASE_URL=http://127.0.0.1:8080` i `ANTHROPIC_API_KEY=dev-alice-123`.
+albo bez zmian w kodzie: `ANTHROPIC_BASE_URL=http://127.0.0.1:8080` i `ANTHROPIC_API_KEY=<klucz-gateway>`.
 
 ## Co robi
 
@@ -33,3 +33,7 @@ albo bez zmian w kodzie: `ANTHROPIC_BASE_URL=http://127.0.0.1:8080` i `ANTHROPIC
 
 - `/admin/usage` nie ma jeszcze autoryzacji - przed wystawieniem poza localhost dodaj ja.
 - Zliczanie wczytuje budzet z `audit.jsonl` po restarcie; przy kilku procesach potrzebna bedzie wspolna baza (np. Redis/SQLite).
+
+## Ochrona przed wyciekiem kluczy
+
+`.env` jest w `.gitignore`, a hook pre-commit (`scripts/hooks`) blokuje commit z sekretami lub plikiem `.env`. Po sklonowaniu repo wlacz go: `git config core.hooksPath scripts/hooks`.
